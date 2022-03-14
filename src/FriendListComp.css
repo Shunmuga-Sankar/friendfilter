@@ -1,0 +1,27 @@
+.custom-container{
+    width: 300px;
+    margin: auto;
+    outline: 2px solid #dedede;
+  }
+  
+  .content-header{
+    background-color: #dddddd;
+    font-weight: bold;
+    padding: 5px;
+    display: flex;
+  }
+
+  .content-header-label{
+      width: calc(100% - 100px);
+  }
+
+  .page-num-label{
+      margin: 0 5px;
+      font-weight: normal;
+  }
+
+  .page-info-div{
+      width: 100px;
+      text-align: right;
+  }
+  

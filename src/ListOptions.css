@@ -1,0 +1,50 @@
+.list-div{
+    border-top: 1px solid #848484;
+    display: flex;
+    padding: 15px;
+}
+
+.list-label-content{
+    width: calc(100% - 140px);
+}
+
+.list-action-content{
+    width: 140px;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.mr10{
+    margin-right: 10px;
+}
+
+.action-btn{
+    border: 1px solid black;
+    border-radius: 4px;
+    padding: 3px;
+    display: inline-block;
+    width: 40px;
+    height: 30px;
+}
+
+.action-btn svg{
+    width: 40px;
+    height: 30px;
+}
+
+.label-title{
+    font-weight: bolder;
+}
+
+.label-sub-title{
+    font-size: 13px;
+    color: #838383;
+}
+
+.fav-btn{
+
+}
+
+.fav-btn-active{
+    
+}
