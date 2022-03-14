@@ -1,6 +1,4 @@
 import './ListOptions.css';
-import Bin from './Assests/Bin.svg';
-import Fav from './Assests/Fav.svg';
 import { ReactComponent as MyBin } from './Assests/Bin.svg';
 import { ReactComponent as FavFilled } from './Assests/Fav.svg';
 import { ReactComponent as FavUnfilled } from './Assests/FavUnfilled.svg';
@@ -14,9 +12,9 @@ const ListOptions = (props) => {
                 </div>
                 <div className='list-action-content'>
                     <div
-                        className={`action-btn btn mr10 ${props.listData.favourite && 'active' || ''}`}
+                        className={`action-btn btn mr10`}
                         onClick={props?.addToFav?.bind(this, props.listData)}>
-                        {props.listData.favourite && <FavFilled /> || <FavUnfilled />}
+                        {(props.listData.favourite && <FavFilled />) || <FavUnfilled />}
                     </div>
                     <div
                         className='action-btn btn'

@@ -1,3 +1,9 @@
 .btn{
   cursor: pointer;
 }
+
+.custom-container{
+  width: 300px;
+  margin: auto;
+  outline: 2px solid #dedede;
+}

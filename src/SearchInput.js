@@ -1,7 +1,6 @@
 
 import './SearchInput.css'
 import ListOptions from './ListOptions';
-import PagerComp from './PagerComp';
 import { useEffect, useState } from 'react';
 const friendListMock = [
     { name: 'Naveen', favourite: true, id: 1 },
@@ -44,7 +43,7 @@ const SearchInput = (props) => {
     }
 
     const onEnter = (event) => {
-        if(event.key.toLowerCase() == 'enter'){
+        if(event.key.toLowerCase() === 'enter'){
             onSearch(event);
         }else{
             event.preventDefault && event.preventDefault();
@@ -55,7 +54,7 @@ const SearchInput = (props) => {
         setState(prevState => {
             let prevOptions = prevState.availOptions.filter(filterData => filterData?.name?.toLowerCase().indexOf(event?.target?.value?.toLowerCase()) > -1)
             prevOptions = reOrderData(prevOptions);
-            if (event.key === 'Enter' && !prevOptions.length) {
+            if (event.key.toLowerCase() === 'enter' && !prevOptions.length) {
                 let today = new Date();
                 let newOptions = [{
                     name: event.target.value,
@@ -75,7 +74,7 @@ const SearchInput = (props) => {
     }
 
     const addToFav = (listData) => {
-        let pos = state.availOptions.findIndex(arrData => arrData.id == listData.id);
+        let pos = state.availOptions.findIndex(arrData => arrData.id === listData.id);
         setState(prevState => {
             let prevOptions = prevState.availOptions;
             prevOptions[pos].favourite = !prevOptions[pos].favourite;
@@ -90,7 +89,7 @@ const SearchInput = (props) => {
     }
 
     const onPageChange = (next) => {
-        setState({ ...state, currentPageNo: next == true ? state.currentPageNo + 1 : state.currentPageNo - 1 });
+        setState({ ...state, currentPageNo: next === true ? state.currentPageNo + 1 : state.currentPageNo - 1 });
     }
 
     return (
@@ -100,9 +99,9 @@ const SearchInput = (props) => {
                 <div className='page-info-div' id="page-info-content-div"></div>
                 {state.totalPages > 1 &&
                     <div className='page-info-div'>
-                        <button className='btn' disabled={state.currentPageNo == 1} onClick={onPageChange}>{`<`}</button>
+                        <button className='btn' disabled={state.currentPageNo === 1} onClick={onPageChange}>{`<`}</button>
                         <span className='page-num-label'>{state.currentPageNo}</span>
-                        <button className='btn' disabled={state.totalPages == state.currentPageNo} onClick={onPageChange.bind(this, true)} >{`>`}</button>
+                        <button className='btn' disabled={state.totalPages === state.currentPageNo} onClick={onPageChange.bind(this, true)} >{`>`}</button>
                     </div>}
             </div>
             <div className='search-ip-div'>
