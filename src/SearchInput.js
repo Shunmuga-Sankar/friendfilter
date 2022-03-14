@@ -54,7 +54,7 @@ const SearchInput = (props) => {
         setState(prevState => {
             let prevOptions = prevState.availOptions.filter(filterData => filterData?.name?.toLowerCase().indexOf(event?.target?.value?.toLowerCase()) > -1)
             prevOptions = reOrderData(prevOptions);
-            if (event.key.toLowerCase() === 'enter' && !prevOptions.length) {
+            if (event?.key?.toLowerCase() === 'enter' && !prevOptions.length) {
                 let today = new Date();
                 let newOptions = [{
                     name: event.target.value,
@@ -84,7 +84,7 @@ const SearchInput = (props) => {
     }
 
     const deleteData = (listData) => {
-        let updatedData = state.availOptions.filter(arrData => arrData.id != listData.id);
+        let updatedData = state.availOptions.filter(arrData => arrData.id !== listData.id);
         setState({ ...state, availOptions: updatedData, totalPages: Math.ceil(updatedData.length / 4) });
     }
 
